@@ -1,0 +1,27 @@
+{
+    "apiVersion": 3,
+    "name": "ud/blank-block",
+    "title": "Blank Block",
+    "category": "ud-blocks",
+    "icon": "block-default",
+    "description": "Leerer Startblock für neue Gutenberg-Plugins. Ideal als Ausgangsbasis für eigene Blöcke mit Editor- und Frontend-Assets.",
+    "supports": {
+        "html": false
+    },
+    "editorScript": "file:./build/editor-script.js",
+    "editorStyle": "file:./build/editor-style.css",
+    "script": "file:./build/frontend-script.js",
+    "style": "file:./build/frontend-style.css",
+    "textdomain": "ud-blank-block-ud",
+    "example": {
+        "attributes": {},
+        "innerBlocks": [
+            {
+                "name": "core/paragraph",
+                "attributes": {
+                    "content": "Dies ist ein leerer Beispielblock (UD Blank Block)."
+                }
+            }
+        ]
+    }
+}

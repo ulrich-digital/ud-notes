@@ -1,0 +1,39 @@
+/* =============================================================== *\
+   UD Blank Block – Editor Styles
+   (Darstellung im Gutenberg-Editor)
+\* =============================================================== */
+
+.wp-block-ud-blank-block {
+	display: block;
+	padding: 24px;
+	background: #f6f7f7;
+	border: 1px dashed #ccd0d4;
+	border-radius: 4px;
+	text-align: center;
+	color: #555d66;
+
+	p {
+		margin: 0;
+		font-size: 14px;
+		line-height: 1.6;
+	}
+}
+
+/* =============================================================== *\
+   Selektionszustände
+\* =============================================================== */
+
+.wp-block-ud-blank-block.is-selected {
+	background: #f0f8ff;
+	border-color: #007cba;
+	color: #000;
+}
+
+/* =============================================================== *\
+   Platzhalter-Text
+\* =============================================================== */
+
+.ud-blank-placeholder {
+	font-style: italic;
+	color: #888;
+}

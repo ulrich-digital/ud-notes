@@ -1,0 +1,29 @@
+/* =============================================================== *\
+   UD Blank Block – Frontend Styles
+   (Darstellung im Live-Frontend)
+\* =============================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+.ud-notes-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(3px);
+    z-index: 9000;
+}
+
+.ud-notes-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9001;
+    max-width: 480px;
+    width: 90%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}

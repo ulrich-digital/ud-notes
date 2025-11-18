@@ -1,0 +1,32 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/@wordpress/scripts/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/css/frontend.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/* =============================================================== *\
+   UD Blank Block – Frontend Styles
+   (Darstellung im Live-Frontend)
+\* =============================================================== */
+.hidden {
+  display: none !important;
+}
+.ud-notes-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(3px);
+  z-index: 9000;
+}
+.ud-notes-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9001;
+  max-width: 480px;
+  width: 90%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/*# sourceMappingURL=frontend-style.css.map*/
