@@ -15,7 +15,7 @@ UD Notes ermöglicht live synchronisierte Nachrichten im Frontend. Alle Nachrich
 
 ## Screenshots
 
-![Frontend-Ansicht](./assets/ud-notitzen_frontend_02_web.png)
+![Frontend-Ansicht](./assets/ud-notizen_frontend_02_web.png)
 *Ansicht zum Erstellen einer neuen Nachricht im Frontend. Nachrichten werden direkt nach dem Absenden synchronisiert und für alle Benutzer sichtbar.*
 
 ![Frontend-Ansicht](./assets/ud-notizen_frontend_02_web.png)
