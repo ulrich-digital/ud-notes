@@ -1,57 +1,75 @@
 # UD Plugin: Notes
 
-UD Notes ermöglicht live synchronisierte Nachrichten im Frontend. Alle Nachrichten werden in Echtzeit aktualisiert, inklusive Antworten und Erledigt-Markierungen. Das System eignet sich ideal für Arbeitsabläufe in der Suppenanstalt, bei denen mehrere Personen gleichzeitig kurze Statusmeldungen austauschen.
+UD Notes ergänzt eine betriebliche WordPress-Frontend-Anwendung um live synchronisierte Kurznachrichten. Angemeldete Benutzerinnen und Benutzer können Mitteilungen erfassen, darauf antworten und abgeschlossene Unterhaltungen aus der Liste der offenen Nachrichten nehmen.
+
+Das Modul ist als eigenständiger Arbeitsbereich in die gemeinsame Frontend-Navigation eingebunden. Eine Statusanzeige macht neue Nachrichten sichtbar und öffnet den zugehörigen Nachrichtenbereich.
 
 ## Funktionen
 
-- Nachrichten im Frontend erstellen
-- Antworten auf bestehende Nachrichten
-- Erledigt-Markierungen für abgeschlossene Punkte
-- Live-Synchronisation über Ably
-- Sichtbarer Status in der Button-Bar (Neue Nachrichten / Keine neuen Nachrichten)
-- Lokale Gelesen-Logik pro Benutzer
-- Integration in bestehende UD-Frontend-Navigation
+- Neue Unterhaltung im Frontend erfassen
+- Antworten einer bestehenden Unterhaltung zuordnen
+- Abgeschlossene Unterhaltungen als erledigt markieren
+- Offene Unterhaltungen über geschützte REST-Endpunkte laden und bearbeiten
+- Neue Nachrichten und Antworten über Ably synchronisieren
+- Status für neue Nachrichten in der gemeinsamen Frontend-Navigation anzeigen
+- Gelesen-Zustand lokal im verwendeten Browser verwalten
 
+## Frontend-Ansichten
 
-## Screenshots
+![Frontend-Modul für interne Nachrichten mit Antworten, Eingabefeld und Abschluss einer Unterhaltung.](./assets/ud-notes_frontend_01_web.png)
 
-![Frontend-Ansicht](./assets/ud-notes_frontend_02_web.png)
-*Ansicht zum Erstellen einer neuen Nachricht im Frontend. Nachrichten werden direkt nach dem Absenden synchronisiert und für alle Benutzer sichtbar.*
+Eine Nachricht bildet den Ausgangspunkt einer Unterhaltung. Antworten bleiben diesem Verlauf zugeordnet. Nach Abschluss der Absprache wird die Unterhaltung als erledigt markiert und aus der Liste der offenen Nachrichten genommen.
 
-![Frontend-Ansicht](./assets/ud-notes_frontend_01_web.png)
-*Der vollständige Nachrichtenverlauf mit Antworten und Erledigt-Funktion. Nachrichten werden in Echtzeit aktualisiert und nach Autor getrennt dargestellt.*
+![Frontend-Formular zum Erfassen einer neuen internen Nachricht.](./assets/ud-notes_frontend_02_web.png)
 
-![Frontend-Ansicht](./assets/ud-notes_status.png)
-*Statusanzeige in der Button-Bar: links ohne neue Nachrichten, rechts mit ungelesenen Nachrichten. Der Hinweis aktualisiert sich automatisch in Echtzeit.*
+Neue Mitteilungen werden direkt in der Frontend-Anwendung erfasst und für die verbundenen Benutzerinnen und Benutzer synchronisiert.
 
+![Statusanzeige für neue und gelesene Nachrichten in der gemeinsamen Frontend-Navigation.](./assets/ud-notes_status.png)
 
-## Voraussetzungen
+Die Navigation zeigt, ob neue Nachrichten vorhanden sind, und führt direkt zum Nachrichtenbereich.
 
-Dieses Plugin benötigt das Plugin **UD Reservation**, um zu funktionieren.  
-Ohne UD Reservation werden weder der Block noch REST-Endpunkte oder Scripts geladen.
+## Daten und Schnittstellen
 
+Das Plugin verwaltet Nachrichten in einer eigenen WordPress-Datenbanktabelle. Gespeichert werden:
+
+- Nachricht
+- Autor
+- Erstellungszeitpunkt
+- Zuordnung einer Antwort zur übergeordneten Nachricht
+- Erledigt-Status
+
+Geschützte REST-Endpunkte übernehmen das Erstellen, Beantworten, Abrufen und Abschliessen der Einträge. Der Zugriff ist auf angemeldete Benutzerinnen und Benutzer mit Leseberechtigung beschränkt.
+
+## Einordnung in die Anwendung
+
+UD Notes und [UD Reinigung](https://github.com/ulrich-digital/ud-reinigung) sind eigenständige Module derselben betrieblichen Frontend-Anwendung. Sie verwenden gemeinsame Interaktionsmuster wie Button-Bar, Statusanzeige und Modalfenster, tauschen untereinander jedoch keine Daten aus.
+
+UD Notes erwartet die vorhandene UD-Frontend-Navigation mit dem Element `#ud-button-bar`. Die Ably-Konfiguration stammt aus der Infrastruktur der zugehörigen Anwendung und wird in einer geplanten Update-Runde technisch überarbeitet.
 
 ## Installation
 
-1. Plugin herunterladen und in WordPress installieren  
-2. UD Reservation aktivieren  
-3. UD Notes aktivieren  
-4. Im Frontend erscheint der Nachrichten-Button automatisch in der UD-Button-Bar
+1. Den Plugin-Ordner `ud-notes` nach `wp-content/plugins/` kopieren.
+2. Die benötigte Frontend-Anwendung und deren Echtzeit-Infrastruktur bereitstellen.
+3. UD Notes im WordPress-Backend aktivieren.
+4. Der Nachrichtenbereich wird für angemeldete Benutzerinnen und Benutzer in die vorhandene Button-Bar eingefügt.
 
+## Entwicklung
 
-## Echtzeit-Technik
+```bash
+npm install
+npm run start
+```
 
-UD Notes verwendet die Ably Realtime API.  
-Der API-Key wird automatisch von UD Reservation übernommen, sodass keine zusätzliche Konfiguration notwendig ist.
+Produktions-Build erstellen:
 
+```bash
+npm run build
+```
 
 ## Autor
 
 [ulrich.digital gmbh](https://ulrich.digital)
 
-
 ## Lizenz
 
-Alle Rechte vorbehalten.
-Dieses Plugin ist urheberrechtlich geschützt und darf ohne ausdrückliche schriftliche Genehmigung der **ulrich.digital gmbh** weder kopiert, verbreitet, verändert noch weiterverwendet werden.
-
+Alle Rechte vorbehalten. Dieses Plugin ist urheberrechtlich geschützt und darf ohne ausdrückliche schriftliche Genehmigung der **ulrich.digital gmbh** weder kopiert, verbreitet, verändert noch weiterverwendet werden.
