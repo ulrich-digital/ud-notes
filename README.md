@@ -16,17 +16,10 @@ Das Modul ist als eigenständiger Arbeitsbereich in die gemeinsame Frontend-Navi
 
 ## Frontend-Ansichten
 
-![Frontend-Modul für interne Nachrichten mit Antworten, Eingabefeld und Abschluss einer Unterhaltung.](./assets/ud-notes_frontend_01_web.png)
+![Frontend-Modul für interne Nachrichten mit zugeordneten Antworten, Abschluss einer Unterhaltung, Erfassung eines neuen Verlaufs und Statusanzeige in der Navigation.](./assets/betriebliche-ablaufe-direkt-im-frontend-organisieren-nachrichten.webp)
 
 Eine Nachricht bildet den Ausgangspunkt einer Unterhaltung. Antworten bleiben diesem Verlauf zugeordnet. Nach Abschluss der Absprache wird die Unterhaltung als erledigt markiert und aus der Liste der offenen Nachrichten genommen.
-
-![Frontend-Formular zum Erfassen einer neuen internen Nachricht.](./assets/ud-notes_frontend_02_web.png)
-
-Neue Mitteilungen werden direkt in der Frontend-Anwendung erfasst und für die verbundenen Benutzerinnen und Benutzer synchronisiert.
-
-![Statusanzeige für neue und gelesene Nachrichten in der gemeinsamen Frontend-Navigation.](./assets/ud-notes_status.png)
-
-Die Navigation zeigt, ob neue Nachrichten vorhanden sind, und führt direkt zum Nachrichtenbereich.
+Eine neue Absprache beginnt als eigener Verlauf. Die Navigation zeigt zugleich, ob neue Nachrichten vorhanden sind, und führt direkt zum Nachrichtenbereich.
 
 ## Daten und Schnittstellen
 
