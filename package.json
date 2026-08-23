@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Live synchronisierte Notizzettel (Post-It) für das Frontend der Suppenanstalt.",
     "author": "ulrich.digital gmbh",
-    "license": "GPL-2.0-or-later",
+    "license": "SEE LICENSE IN LICENSE",
     "main": "ud-blank-block.php",
     "scripts": {
         "build": "webpack --config webpack.config.js",
